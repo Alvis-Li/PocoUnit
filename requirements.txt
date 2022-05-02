@@ -1,4 +1,3 @@
 pocoui
 pocounit
-Flask
-Jinja2
+python-dotenv
