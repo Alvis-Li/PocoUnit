@@ -1,14 +1,14 @@
 # coding=utf-8
 from airtest.core.api import *
 
-from libs.utils.login import selectTabMine
-
 def runTest(self, poco):
-    selectTabMine(poco)
-    poco("com.xmiles.jdd:id/tv_mine_username").wait(1).click()
-    poco("com.xmiles.jdd:id/tv_login_phone").wait(1).click()
-    poco("com.xmiles.jdd:id/et_login_phone_num").wait(3).set_text(123)
-    snapshot(msg="输入手机号")
+    poco("com.fanmao.bookkeeping:id/rela_tab_4").wait(3).click()
+    poco("com.fanmao.bookkeeping:id/img_my_header").click()
+    wait(Template(r"res/img/logout.png", record_pos=(0.003, -0.504), resolution=(1040, 1664)))
+    poco("com.fanmao.bookkeeping:id/et_mobile").set_text('18601687641')
+    poco("com.fanmao.bookkeeping:id/et_password").set_text('123456')
+    poco("com.fanmao.bookkeeping:id/btn_login").click()
+    assert_equal(poco("com.fanmao.bookkeeping:id/tv_my_name").wait(3).get_text(), 'null')
 
 def name(self):
-    return 'CalculatorPlus (customized name)'
+    return 'login'

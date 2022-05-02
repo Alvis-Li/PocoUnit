@@ -5,15 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: 当前文件",
+            "name": "Run Test",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "runner.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
                 "-f",
-                "test/test1.py"
+                "logout/logout_smoke.py"
             ]
         }
     ]
